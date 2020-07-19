@@ -4,10 +4,13 @@ body {
 
 #scores {
     text-align: left;
+
 }
 
 #timer {
-    text-align: right;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 20px;
 }
 
 #title {
@@ -18,10 +21,15 @@ body {
     text-align: center;
 }
 
-/*  THIS IS NOT WORKING TO CENTER THE BUTTON
-#start {
-    margin-left:auto;
-    margin-right:auto;
-} */
+#button {
+    text-align: center;
+}
+
+ /* THIS IS NOT WORKING TO CENTER THE BUTTON
+    FOR index.HTML; BUT DOES WORK FOR indexBS.HTML */
+
+#startBtn {
+    text-align: center;
+}
 
 

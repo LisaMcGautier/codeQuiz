@@ -41,3 +41,8 @@ Began mapping out the logic to create this project.
 Have created index.html as a basic template, indexBS.html as a templete using Bootstrap, style.css for basic styling, script.js, which for the moment only contains a logistic approach to programming the quiz.
 Having trouble with the alignment of the timer at the top right and centering the button on the page.
 Next steps will involve writing the questions, then creating the JavaScript code to perform the functionality of the project.
+
+7/19
+
+Started working on the timer with a function called "startQuiz".
+The basic concept is working, but it executes when the page reloads, not when the startBtn is clicked.
