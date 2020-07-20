@@ -32,9 +32,22 @@ function startQuiz() {
 startBtn.addEventListener("click", startQuiz());
 
 // title h1 && array [] of questions getElementById.innerHTML "question"
-
 // objective p && possible answers
 // array [] of objects {3 incorrect answers && 1 correct answer}
+
+
+
+var questions = [
+    {
+        question: "Variables can be assigned all of the following values EXCEPT:  ",
+        answers: ["extension", "string", "number", "Boolean"],
+        correctAnswer: "extension"
+    },
+]
+
+
+
+
 // incorrect answers decrement timer
 // all answers activate next question
 // function
