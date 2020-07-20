@@ -94,19 +94,35 @@ var questions = [
 
 // all answers activate next question
 
-// function showQuestions() {
-
-//     title.innerHTML = questions[0];
-
-//     objective.innerHTML = answers[0];
-
-// }
 
 
+// var currentIndex = 0;
+// var currentQuestion = questions[currentIndex];
+// var currentAnswers = answers[currentIndex];
 
+// function
+// loop
+
+function showQuestions(sequence) {
+    
+    title.innerHTML = questions[sequence].question;
+
+    objective.innerHTML = questions[sequence].answers;
+
+}
+
+// incorrect answers decrement timer
+
+
+
+// start button
+// disappears onclick
+
+
+// function
 function startQuiz() {
 
-    // showQuestions();
+    showQuestions(0);
     
     startBtn.style.display = "none";
     
@@ -127,13 +143,11 @@ function startQuiz() {
 
 
 
-// incorrect answers decrement timer
 
-// function
-// loop
 
-// start button
-// disappears onclick
+
+
+
 
 // GAME ENDS WHEN TIMER = 0 || ALL QUESTIONS ANSWERED
 
@@ -147,10 +161,23 @@ function startQuiz() {
 
 
 
+
+
+
+
+// var images = [
+//     "https://images.unsplash.com/photo-1594632248517-1f610273384a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+//     "https://images.unsplash.com/photo-1594760467013-64ac2b80b7d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+//     "https://images.unsplash.com/photo-1594853475347-973e1af6cb25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+//     "https://images.unsplash.com/photo-1594865593338-fccaf4bd9afa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+//     "https://images.unsplash.com/photo-1594771425998-bd664e2de083?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+//     "https://images.unsplash.com/photo-1594430715521-b3f62b9bdda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+// ];
+
 // var currentIndex = 0;
-// var currentQuestion = questions[currentIndex];
+// var currentImage = images[currentIndex];
 
-
+// carouselBox.setAttribute("style", "background-image: url('" + currentImage + "')");
 
 // carouselBox.addEventListener("click", function () {
 //     window.location.href = currentImage;
@@ -174,6 +201,6 @@ function startQuiz() {
 //     console.log(currentImage);
 
 
-    
-    
+//     carouselBox.setAttribute("style", "background-image: url('" + currentImage + "')");
+//     // carouselBox.style.backgroundImage = "url('" + currentImage + "')"
 // });
