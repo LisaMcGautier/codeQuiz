@@ -52,3 +52,9 @@ The basic concept is working, but it executes when the page reloads, not when th
 Spent a considerable amount of time creating the questions in a Word document.  This helped me to organize my thoughts, but also to look at the questions from a wider lens. Began entering the questions and answers into an array of objects in the script.js file.  Discovered that copying and pasting the questions and possible answers into the array of objects will be a helpful shortcut in this project.
 
 All questions and answers have been added to the array of objects.
+
+For simplicity, working exclusively with indexBS.html, as the styling is more visually pleasing.  Will include most recent update of index.html with 
+
+Timer now starts on click of startBtn, whixh also disappears when clicked.
+
+Have only begun working on the function to display the array of questions coordinated with the array of possible answers. Work in progress!

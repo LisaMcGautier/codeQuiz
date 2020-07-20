@@ -1,41 +1,24 @@
 // scores internal link (anchor)
-// var scores = getElementById("scores");
+var scores = document.getElementById("scores");
 
 // timer at 0 when page loads && starts onclick start button
 // function in previous activity
 
 var timer = document.getElementById("timer");
+
 var startBtn = document.getElementById("startBtn");
-var title = document.getElementById("title");
+
+startBtn.addEventListener("click", startQuiz);
 
 var countdown;
 countdown = 10;
-console.log(countdown);
-
-
-function startQuiz() {
-    var interval = setInterval(function () {
-        timer.innerHTML = "Time Remaining: " + countdown;       
-        countdown--;
-
-        console.log(countdown);
-
-        if (countdown === -1) {
-            clearInterval(interval);
-            title.innerHTML = "Game Over!";
-        }
-
-    }, 1000);
-
-}
-
-startBtn.addEventListener("click", startQuiz());
 
 // title h1 && array [] of questions getElementById.innerHTML "question"
 // objective p && possible answers
 // array [] of objects {3 incorrect answers && 1 correct answer}
 
-
+var title = document.getElementById("title");
+var objective = document.getElementById("objective");
 
 var questions = [
 
@@ -106,13 +89,46 @@ var questions = [
         correctAnswer: "concatenate"
     },
 
-]
+];
 
+
+// all answers activate next question
+
+// function showQuestions() {
+
+//     title.innerHTML = questions[0];
+
+//     objective.innerHTML = answers[0];
+
+// }
+
+
+
+function startQuiz() {
+
+    // showQuestions();
+    
+    startBtn.style.display = "none";
+    
+    var interval = setInterval(function () {
+        timer.innerHTML = "Time Remaining: " + countdown;       
+        countdown--;          
+              
+        console.log(countdown);
+
+        if (countdown === -1) {
+            clearInterval(interval);
+            title.innerHTML = "Game Over!";
+        }
+
+    }, 1000);
+
+}
 
 
 
 // incorrect answers decrement timer
-// all answers activate next question
+
 // function
 // loop
 
@@ -125,3 +141,39 @@ var questions = [
 
 // an idea: background color flashes green (1 sec?) if correct
 // flashes red if incorrect
+
+
+
+
+
+
+// var currentIndex = 0;
+// var currentQuestion = questions[currentIndex];
+
+
+
+// carouselBox.addEventListener("click", function () {
+//     window.location.href = currentImage;
+// });
+
+// console.log(currentIndex);
+// console.log(currentImage);
+
+// nextBtn.addEventListener("click", function () {
+//     event.stopPropagation();
+
+//     currentIndex++;
+//     currentImage = images[currentIndex];
+    
+//     if (currentIndex >= images.length) {
+//         currentIndex = 0;
+//         currentImage = images[currentIndex];
+//     }
+
+//     console.log(currentIndex);
+//     console.log(currentImage);
+
+
+    
+    
+// });
