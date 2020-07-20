@@ -50,3 +50,5 @@ The basic concept is working, but it executes when the page reloads, not when th
 7/20
 
 Spent a considerable amount of time creating the questions in a Word document.  This helped me to organize my thoughts, but also to look at the questions from a wider lens. Began entering the questions and answers into an array of objects in the script.js file.  Discovered that copying and pasting the questions and possible answers into the array of objects will be a helpful shortcut in this project.
+
+All questions and answers have been added to the array of objects.
