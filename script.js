@@ -104,12 +104,35 @@ var questions = [
 // loop
 
 function showQuestions(sequence) {
-    
+
     title.innerHTML = questions[sequence].question;
 
-    objective.innerHTML = questions[sequence].answers;
+    document.getElementById("objective").addEventListener("click", function(event) {
+        // objective.innerHTML = "";
+        console.log(event.target);
+    });
+
+    objective.innerHTML = "";
+    
+    var answerButtons = ["buttonA", "buttonB", "buttonC", "buttonD"];
+
+    for (var i = 0; i < answerButtons.length; i++) {
+        // objective.innerHTML = "";
+        var addButton = document.createElement("button");
+        addButton.innerText = answerButtons[i];
+        document.getElementById("objective").appendChild(addButton);
+
+        
+    }
+
+
+
+    
 
 }
+
+
+
 
 // incorrect answers decrement timer
 
@@ -123,13 +146,14 @@ function showQuestions(sequence) {
 function startQuiz() {
 
     showQuestions(0);
-    
+
+    // objective.innerHTML = "";
     startBtn.style.display = "none";
-    
+
     var interval = setInterval(function () {
-        timer.innerHTML = "Time Remaining: " + countdown;       
-        countdown--;          
-              
+        timer.innerHTML = "Time Remaining: " + countdown;
+        countdown--;
+
         console.log(countdown);
 
         if (countdown === -1) {
@@ -165,14 +189,7 @@ function startQuiz() {
 
 
 
-// var images = [
-//     "https://images.unsplash.com/photo-1594632248517-1f610273384a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-//     "https://images.unsplash.com/photo-1594760467013-64ac2b80b7d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-//     "https://images.unsplash.com/photo-1594853475347-973e1af6cb25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-//     "https://images.unsplash.com/photo-1594865593338-fccaf4bd9afa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-//     "https://images.unsplash.com/photo-1594771425998-bd664e2de083?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-//     "https://images.unsplash.com/photo-1594430715521-b3f62b9bdda6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-// ];
+
 
 // var currentIndex = 0;
 // var currentImage = images[currentIndex];
@@ -191,7 +208,7 @@ function startQuiz() {
 
 //     currentIndex++;
 //     currentImage = images[currentIndex];
-    
+
 //     if (currentIndex >= images.length) {
 //         currentIndex = 0;
 //         currentImage = images[currentIndex];
@@ -204,3 +221,21 @@ function startQuiz() {
 //     carouselBox.setAttribute("style", "background-image: url('" + currentImage + "')");
 //     // carouselBox.style.backgroundImage = "url('" + currentImage + "')"
 // });
+
+
+
+// function showCurrentQuestion() {
+
+//     document.body.innerHTML="";
+
+//     var questionTitle=document.createElement("h1");
+//     questionTitle.innerText=questions[currentQuestion].question;
+//     document.body.appendChild(questionTitle);
+
+//     var questionsList=document.createElement("ul");
+
+
+//     for () {
+
+//     }
+// }
