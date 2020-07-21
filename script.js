@@ -107,27 +107,21 @@ function showQuestions(sequence) {
 
     title.innerHTML = questions[sequence].question;
 
-    document.getElementById("objective").addEventListener("click", function(event) {
-        // objective.innerHTML = "";
+    document.getElementById("objective").addEventListener("click", function (event) {
         console.log(event.target);
     });
 
     objective.innerHTML = "";
-    
+
     var answerButtons = ["buttonA", "buttonB", "buttonC", "buttonD"];
 
     for (var i = 0; i < answerButtons.length; i++) {
-        // objective.innerHTML = "";
         var addButton = document.createElement("button");
-        addButton.innerText = answerButtons[i];
+        // addButton.innerText = answerButtons[i];
+        addButton.innerText = questions[sequence].answers[i];
         document.getElementById("objective").appendChild(addButton);
 
-        
     }
-
-
-
-    
 
 }
 
@@ -147,7 +141,6 @@ function startQuiz() {
 
     showQuestions(0);
 
-    // objective.innerHTML = "";
     startBtn.style.display = "none";
 
     var interval = setInterval(function () {

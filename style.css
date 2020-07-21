@@ -10,6 +10,7 @@ body {
 #timer {
     text-align: center;
     font-size: large;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -19,6 +20,7 @@ body {
 
 #objective {
     text-align: center;
+    margin: 10%;
 }
 
 #button {

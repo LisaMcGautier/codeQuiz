@@ -62,3 +62,7 @@ Have only begun working on the function to display the array of questions coordi
 7/21
 
 Created button placeholders (buttonA, buttonB, buttonC, buttonD). After several tries, found the correct placement of the `objective.innerHTML = "";` within the code block.
+
+Discovered how to replace the placeholder button labels with the answers to the question.
+
+Added a small margin to #objective and #timer to improve visual appeal.
