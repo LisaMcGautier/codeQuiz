@@ -66,3 +66,7 @@ Created button placeholders (buttonA, buttonB, buttonC, buttonD). After several 
 Discovered how to replace the placeholder button labels with the answers to the question.
 
 Added a small margin to #objective and #timer to improve visual appeal.
+
+It may not seem like much, but I just spent a long time trying to figure out how to `console.log()` the button clicked and keep only the string within the button. I had to rewatch the lecture to finally get it right!!
+
+Also tried to separate the buttons using dynamic css, but was ultimately unsuccessful.
