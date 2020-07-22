@@ -96,3 +96,7 @@ Started working on the highscore function.  Not there yet.
 Made adjustments to the "You did it!" screen; input field and Submit button not showing up.
 
 Input field and Submit button appear on highscore screen; input value logging to console, but final score not showing up on main screen.
+
+Fixed a bug in the `showQuestions` function that was logging an error to the console.
+
+Once the player completes the game, they can save their initials and score.

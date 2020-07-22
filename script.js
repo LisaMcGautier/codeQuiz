@@ -102,6 +102,7 @@ var currentIndex = 0;
 // loop
 
 function showQuestions() {
+    console.log("Showing Question Index: " + currentIndex);
 
     title.innerHTML = questions[currentIndex].question;
 
@@ -115,7 +116,7 @@ function showQuestions() {
         addButton.innerText = questions[currentIndex].answers[i];
         document.getElementById("objective").appendChild(addButton);
         addButton.setAttribute("class", "btn btn-info");
-        addButton.setAttribute("style","margin: 5px");
+        addButton.setAttribute("style", "margin: 5px");
         addButton.addEventListener("click", checkAnswer);
     }
 
@@ -128,40 +129,67 @@ function showQuestions() {
 function checkAnswer(event) {
 
     // document.getElementById("objective").addEventListener("click", function (event) {
-        // console.log(event.target);
-        var buttonContent = event.target.innerText;
-        // console.log(buttonContent);
+    // console.log(event.target);
+    var buttonContent = event.target.innerText;
+    // console.log(buttonContent);
 
-        // INCORRECT ANSWERS DECREMENT TIMER
+    // INCORRECT ANSWERS DECREMENT TIMER
 
-        if (buttonContent != questions[currentIndex].correctAnswer) {
-            countdown -= 7;
-            console.log("wrong!");
-        } else {
-            console.log("RIGHT!");
-        }
+    if (buttonContent != questions[currentIndex].correctAnswer) {
+        countdown -= 7;
+        // console.log("wrong!");
+    } else {
+        // console.log("RIGHT!");
+    }
 
     // });
 
-    // ALL ANSWERS ACTIVETE NEXT QUESTION
+    // ALL ANSWERS ACTIVATE NEXT QUESTION
     currentIndex++;
 
-    console.log(currentIndex);
+    // console.log(currentIndex);
 
     // GAME ENDS WHEN ALL QUESTIONS ANSWERED
 
     if (currentIndex >= questions.length) {
+
+        console.log(countdown);
+        // console.log(countdown.value);
+        localStorage.setItem("score", countdown);
+
         clearInterval(interval);
         title.setAttribute("style", "color: green");
         title.innerHTML = "You Did It!👏";
         objective.innerHTML = "";
         objective.innerHTML = "Your score is : " + " " + countdown;
 
-        highscore();
+        // localStorage.setItem("score", countdown.value);
+
+        var highscoreButton = document.createElement("button");
+        highscoreButton.innerText = ("High Scores");
+        objective.appendChild(highscoreButton);
+        highscoreButton.setAttribute("class", "btn btn-light");
+        highscoreButton.setAttribute("style", "margin: 20px; font-weight: bold");
+
+        highscoreButton.addEventListener("click", function (event) {
+            highscore();
+        })
+
+
+        // IT TOOK A WHILE TO GET THE SYNTAX CORRECT...
+
+        // if() {}
+        // highscoreButton.addEventListener("click", function() {})        
+        // highscoreButton.addEventListener("click", highscore());
+        // highscore();
+
 
     }
 
-    showQuestions();
+    else {
+        showQuestions();
+    }
+
 
 }
 
@@ -170,28 +198,31 @@ function checkAnswer(event) {
 
 // function
 
-function highscore(){
+var initials;
+
+function highscore() {
 
     title.innerHTML = "High Score!";
 
     objective.innerHTML = "Your score is : " + " " + countdown;
 
     objective.innerHTML = "Enter Initials : "
-    var initials = document.createElement("input");
+    initials = document.createElement("input");
     objective.appendChild(initials);
-    initials.addEventListener("keypress", function() {
-        console.log("input")
+    initials.addEventListener("keypress", function () {
+        console.log("input");
     });
 
 
-    var submitButton = document.createElement("button");  
-    submitButton.innerText = ("Submit");          
+    var submitButton = document.createElement("button");
+    submitButton.innerText = ("Submit");
     objective.appendChild(submitButton);
     submitButton.setAttribute("class", "btn btn-primary btn-sm");
-    submitButton.setAttribute("style","margin: 5px");
-    submitButton.addEventListener("click", function() {
+    submitButton.setAttribute("style", "margin: 5px");
+    submitButton.addEventListener("click", function () {
         console.log(initials.value);
-    } );
+        localStorage.setItem("winner", initials.value);
+    });
 }
 
 // var addButton = document.createElement("button");
