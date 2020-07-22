@@ -5,9 +5,9 @@
 As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a 
 - [x] **timed** code quiz with 
 - [x] **multiple-choice questions**. This app will run in the browser and feature 
-- [] dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a 
-- [] clean and polished user interface and be 
-- [] responsive, ensuring that it adapts to multiple screen sizes.
+- [x] dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a 
+- [x] clean and polished user interface and be 
+- [x] responsive, ensuring that it adapts to multiple screen sizes.
 
 ## User Story
 
@@ -24,11 +24,11 @@ GIVEN I am taking a code quiz
 - [x] WHEN I click the **start button**
 - [x] THEN a **timer starts** and I am 
 - [x] presented with a **question**
-- [] WHEN I **answer a question**
-- [] THEN I am presented with **another question**
-- [] WHEN I answer a question **incorrectly**
-- [] THEN **time is subtracted from the clock**
-- [] WHEN **all questions are answered** 
+- [x] WHEN I **answer a question**
+- [x] THEN I am presented with **another question**
+- [x] WHEN I answer a question **incorrectly**
+- [x] THEN **time is subtracted from the clock**
+- [x] WHEN **all questions are answered** 
 - [x] or the **timer reaches 0**
 - [x] THEN the **game is over**
 - [] WHEN the game is over
@@ -83,3 +83,7 @@ Not sure if I am ready to commit the file as it is...
 Need to take a moment to assess.
 
 Separated `showQuestions` function into two parts; created a new function `checkAnswer`.  Logging "RIGHT!" or "wrong!" to the console.
+
+Figured out that my syntax for currentIndex was incorrect!!  I was ASSIGNING `currentIndex = currentIndex++` instead of simply INCREMENTING currentIndex++!! 🙂
+
+Added some dynamic styling and checked for responsiveness on smaller screens.
