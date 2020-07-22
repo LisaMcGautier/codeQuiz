@@ -100,3 +100,7 @@ Input field and Submit button appear on highscore screen; input value logging to
 Fixed a bug in the `showQuestions` function that was logging an error to the console.
 
 Once the player completes the game, they can save their initials and score.
+
+Tried to concatenate score and winner (variables `countdown` and `initials`
+
+I can log each to the console, but because each is set to local storage within a function, I am having difficulty creating a new object variable to store both values in a single key.

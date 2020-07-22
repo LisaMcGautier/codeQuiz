@@ -102,7 +102,8 @@ var currentIndex = 0;
 // loop
 
 function showQuestions() {
-    console.log("Showing Question Index: " + currentIndex);
+
+    // console.log("Showing Question Index: " + currentIndex);
 
     title.innerHTML = questions[currentIndex].question;
 
@@ -223,16 +224,9 @@ function highscore() {
         console.log(initials.value);
         localStorage.setItem("winner", initials.value);
     });
+
+
 }
-
-// var addButton = document.createElement("button");
-// addButton.innerText = questions[currentIndex].answers[i];
-// document.getElementById("objective").appendChild(addButton);
-// addButton.setAttribute("class", "btn btn-info");
-// addButton.setAttribute("style","margin: 5px");
-// addButton.addEventListener("click", checkAnswer);
-
-
 
 // function
 
@@ -269,6 +263,58 @@ function startQuiz() {
 }
 
 
+
+// TRYING TO SAVE THE SCORE AND THE INITIALS AS AN OBJECT IN LOCAL STORAGE.  NOT SUCCESSFUL. YET.
+
+// LINE 159
+localStorage.getItem("score", countdown);
+// LINE 225
+localStorage.getItem("winner", initials);
+
+console.log(localStorage.getItem("score", countdown));
+console.log(localStorage.getItem("winner", initials));
+
+// var highScore={
+//     score: ("score", countdown),
+//     winner: ("winner", initials)
+// }
+
+// var highScoreObjectJSON=JSON.stringify(highScore);
+// console.log(highScoreObjectJSON);
+// localStorage.setItem("highscore", highScoreObjectJSON);
+
+// var highScoreObjectJSON=localStorage.getItem(highScore);
+// console.log(highScoreObjectJSON);
+
+// var highScore={
+//     "score": countdown,
+//     "winner": initials
+// }
+
+// var highScore={
+//     initals: "winner", 
+//     countdown: "score"
+// }
+
+// console.log("score", countdown);
+// console.log("winner", initials);
+
+// console.log("score");
+// console.log("winner");
+
+
+
+
+// USED THIS TEMPLATE TO CREATE HIGHSCORE AND SUBMIT BUTTONS
+
+// var addButton = document.createElement("button");
+// addButton.innerText = questions[currentIndex].answers[i];
+// document.getElementById("objective").appendChild(addButton);
+// addButton.setAttribute("class", "btn btn-info");
+// addButton.setAttribute("style","margin: 5px");
+// addButton.addEventListener("click", checkAnswer);
+
+
 // SEVERAL ATTEMPTS THAT DID NOT RETURN THE DESIRED RESULT OF THE BUTTON STRING IN THE CONSOLE LOG:
 
 
@@ -293,13 +339,15 @@ function startQuiz() {
 // document.getElementById("objective").children[3].setAttribute("style","margin-left: 2px; margin-right 2px");
 
 
+// THE INSTRUCTOR SAYS THAT A FOR LOOP WILL PROCESS THE QUESTIONS TOO QUICKLY  
+
 // for (var i = 0; currentIndex >= questions.length; i++) {
 // currentIndex = currentIndex++;
 // }
 
 
 
-
+// RAN OUT OF TIME TO TRY TO IMPLEMENT THIS IDEA...
 
 
 // an idea: background color flashes green (1 sec?) if correct
