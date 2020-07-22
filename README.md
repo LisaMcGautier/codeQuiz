@@ -70,3 +70,16 @@ Added a small margin to #objective and #timer to improve visual appeal.
 It may not seem like much, but I just spent a long time trying to figure out how to `console.log()` the button clicked and keep only the string within the button. I had to rewatch the lecture to finally get it right!!
 
 Also tried to separate the buttons using dynamic css, but was ultimately unsuccessful.
+
+
+Had the interesting experience of making too many changes at once, and throwing multiple errors in the console.
+
+Restored the most recent script.js committed to the repo as a new file, "scriptBackup.js" and used Visual Studio Code to compare the two files.
+
+The behavior of the page has returned to previous ecpectations, but I am now struggling with getting the questions and the answers to change once an answer is selected.
+
+Not sure if I am ready to commit the file as it is...
+
+Need to take a moment to assess.
+
+Separated `showQuestions` function into two parts; created a new function `checkAnswer`.  Logging "RIGHT!" or "wrong!" to the console.

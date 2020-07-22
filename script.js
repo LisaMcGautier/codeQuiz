@@ -11,7 +11,7 @@ var startBtn = document.getElementById("startBtn");
 startBtn.addEventListener("click", startQuiz);
 
 var countdown;
-countdown = 10;
+countdown = 30;
 
 // title h1 && array [] of questions getElementById.innerHTML "question"
 // objective p && possible answers
@@ -50,7 +50,7 @@ var questions = [
         question: "An array must be enclosed within",
         answers: ["parentheses", "curly brackets", "arrow brackets",
             "square brackets"],
-        correctAnswer: ""
+        correctAnswer: "square brackets"
     },
 
     {
@@ -89,24 +89,24 @@ var questions = [
         correctAnswer: "concatenate"
     },
 
+    // console.log(questions.length);
 ];
 
 
-// all answers activate next question
-
-
-
 var currentIndex = 0;
-var currentQuestion = questions[currentIndex].question;
-var currentAnswers = questions[currentIndex].answers;
+// var currentQuestion = questions[currentIndex].question;
+// var currentAnswers = questions[currentIndex].answers;
+// var currentCorrectAnswer = questions[currentIndex].correctAnswer;
 // currentIndex = currentIndex++;
 
 // function
 // loop
 
+// all answers activate next question
+
 function showQuestions() {
 
-    title.innerHTML = currentQuestion;
+    title.innerHTML = questions[currentIndex].question;
 
     objective.innerHTML = "";
 
@@ -117,54 +117,45 @@ function showQuestions() {
         // addButton.innerText = answerButtons[i];
         addButton.innerText = questions[currentIndex].answers[i];
         document.getElementById("objective").appendChild(addButton);
-        // document.getElementById("objective").children[0].setAttribute("style","margin-left: 2px; margin-right 2px");
-        // document.getElementById("objective").children[1].setAttribute("style","margin-left: 2px; margin-right 2px");
-        // document.getElementById("objective").children[2].setAttribute("style","margin-left: 2px; margin-right 2px");
-        // document.getElementById("objective").children[3].setAttribute("style","margin-left: 2px; margin-right 2px");
+        addButton.addEventListener("click", checkAnswer);
     }
 
-    document.getElementById("objective").addEventListener("click", function (event) {
-        console.log(event.target);
+    // checkAnswer();
+
+}
+
+
+function checkAnswer(event) {
+
+    // document.getElementById("objective").addEventListener("click", function (event) {
+        // console.log(event.target);
         var buttonContent = event.target.innerText;
-        console.log(buttonContent);    
-    
-    });
+        console.log(buttonContent);
+
+        // incorrect answers decrement timer
+
+        if (buttonContent != questions[currentIndex].correctAnswer) {
+            countdown -= 7;
+            console.log("wrong!");
+        } else {
+            console.log("RIGHT!");
+        }
+
+        // GAME ENDS WHEN ALL QUESTIONS ANSWERED
+
+        if (currentIndex >= questions.length) {
+            title.innerHTML = "You Did It!"
+        }
+
+    // });
+
+    currentIndex = currentIndex++;
+    showQuestions();
 
 }
-
-function checkAnswer() {
-
-}
-
-
-// console.log(innerText);
-// console.log(event.target.value);
-// console.log(answerButton.innerText);
-// console.log(questions[currentIndex].answers[i]);
-// console.log(event.currentTarget.innerText);
-
-// if(event.target.value){
-
-// }
-
-// if(event.target.matches(button)){
-    // var buttonText = event.currentTarget.innerText;
-    // console.log(buttonText);
-// }
-
-
-
-
-
-// incorrect answers decrement timer
-
-
-
-// start button
-// disappears onclick
-
 
 // function
+
 function startQuiz() {
 
     var interval = setInterval(function () {
@@ -173,6 +164,8 @@ function startQuiz() {
 
         console.log(countdown);
 
+        // GAME ENDS WHEN TIMER = 0
+
         if (countdown === -1) {
             clearInterval(interval);
             title.innerHTML = "Game Over!";
@@ -180,64 +173,100 @@ function startQuiz() {
 
     }, 1000);
 
+    timer.setAttribute("style", "color: blue")
+
     showQuestions();
+
+    // start button
+    // disappears onclick
 
     startBtn.style.display = "none";
 
 }
 
 
-// GAME ENDS WHEN TIMER = 0 || ALL QUESTIONS ANSWERED
 
 
-// var currentIndex = 0;
-// var currentImage = images[currentIndex];
-
-// carouselBox.setAttribute("style", "background-image: url('" + currentImage + "')");
-
-// carouselBox.addEventListener("click", function () {
-//     window.location.href = currentImage;
-// });
-
-// console.log(currentIndex);
-// console.log(currentImage);
-
-// nextBtn.addEventListener("click", function () {
-//     event.stopPropagation();
-
-//     currentIndex++;
-//     currentImage = images[currentIndex];
-
-//     if (currentIndex >= images.length) {
-//         currentIndex = 0;
-//         currentImage = images[currentIndex];
-//     }
-
-//     console.log(currentIndex);
-//     console.log(currentImage);
-
-
-//     carouselBox.setAttribute("style", "background-image: url('" + currentImage + "')");
-//     // carouselBox.style.backgroundImage = "url('" + currentImage + "')"
-// });
+    // function checkAnswer() {}
 
 
 
-// function showCurrentQuestion() {
-
-//     document.body.innerHTML="";
-
-//     var questionTitle=document.createElement("h1");
-//     questionTitle.innerText=questions[currentQuestion].question;
-//     document.body.appendChild(questionTitle);
-
-//     var questionsList=document.createElement("ul");
+    // SEVERAL ATTEMPTS THAT DID NOT RETURN THE DESIRED RESULT OF THE BUTTON STRING IN THE CONSOLE LOG:
 
 
-//     for () {
+    // console.log(innerText);
+    // console.log(event.target.value);
+    // console.log(answerButton.innerText);
+    // console.log(questions[currentIndex].answers[i]);
+    // console.log(event.currentTarget.innerText);
 
-//     }
-// }
+    // if(event.target.value){}
+
+    // if(event.target.matches(button)){
+    // var buttonText = event.currentTarget.innerText;
+    // console.log(buttonText);
+    // }
+
+    // TRIED TO SEPARATE THE BUTTONS FROM EACH OTHER, BUT THIS APPROACH DID NOT WORK.
+
+    // document.getElementById("objective").children[0].setAttribute("style","margin-left: 2px; margin-right 2px");
+    // document.getElementById("objective").children[1].setAttribute("style","margin-left: 2px; margin-right 2px");
+    // document.getElementById("objective").children[2].setAttribute("style","margin-left: 2px; margin-right 2px");
+    // document.getElementById("objective").children[3].setAttribute("style","margin-left: 2px; margin-right 2px");
+
+
+    // for (var i = 0; currentIndex >= questions.length; i++) {
+    // currentIndex = currentIndex++;
+    // }
+
+    // var currentIndex = 0;
+    // var currentImage = images[currentIndex];
+
+    // carouselBox.setAttribute("style", "background-image: url('" + currentImage + "')");
+
+    // carouselBox.addEventListener("click", function () {
+    //     window.location.href = currentImage;
+    // });
+
+    // console.log(currentIndex);
+    // console.log(currentImage);
+
+    // nextBtn.addEventListener("click", function () {
+    //     event.stopPropagation();
+
+    //     currentIndex++;
+    //     currentImage = images[currentIndex];
+
+    //     if (currentIndex >= images.length) {
+    //         currentIndex = 0;
+    //         currentImage = images[currentIndex];
+    //     }
+
+    //     console.log(currentIndex);
+    //     console.log(currentImage);
+
+
+    //     carouselBox.setAttribute("style", "background-image: url('" + currentImage + "')");
+    //     // carouselBox.style.backgroundImage = "url('" + currentImage + "')"
+    // });
+
+
+
+    // function showCurrentQuestion() {
+
+    //     document.body.innerHTML="";
+
+    //     var questionTitle=document.createElement("h1");
+    //     questionTitle.innerText=questions[currentQuestion].question;
+    //     document.body.appendChild(questionTitle);
+
+    //     var questionsList=document.createElement("ul");
+
+
+    //     for () {
+
+    //     }
+    // }
 
 
 
