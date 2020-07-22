@@ -94,3 +94,5 @@ Figured out how to change the background color while keeping the integrity of th
 
 Started working on the highscore function.  Not there yet.
 Made adjustments to the "You did it!" screen; input field and Submit button not showing up.
+
+Input field and Submit button appear on highscore screen; input value logging to console, but final score not showing up on main screen.

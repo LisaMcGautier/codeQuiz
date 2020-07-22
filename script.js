@@ -157,7 +157,7 @@ function checkAnswer(event) {
         objective.innerHTML = "";
         objective.innerHTML = "Your score is : " + " " + countdown;
 
-        // highscore();
+        highscore();
 
     }
 
@@ -174,23 +174,32 @@ function highscore(){
 
     title.innerHTML = "High Score!";
 
-    objective.innerHTML = "Enter Initials:"
-    var initials = objective.createElement("input");
+    objective.innerHTML = "Your score is : " + " " + countdown;
+
+    objective.innerHTML = "Enter Initials : "
+    var initials = document.createElement("input");
     objective.appendChild(initials);
     initials.addEventListener("keypress", function() {
         console.log("input")
     });
 
 
-    var submitButton = objective.createElement("button");  
-    addButton.innerText = ("Submit");          
-    document.getElementById("objective").appendChild(addButton);
-    submitButton.setAttribute("class", "btn btn-primary");
+    var submitButton = document.createElement("button");  
+    submitButton.innerText = ("Submit");          
+    objective.appendChild(submitButton);
+    submitButton.setAttribute("class", "btn btn-primary btn-sm");
     submitButton.setAttribute("style","margin: 5px");
-    submitButton.addEventListener("click", );
+    submitButton.addEventListener("click", function() {
+        console.log(initials.value);
+    } );
 }
 
-
+// var addButton = document.createElement("button");
+// addButton.innerText = questions[currentIndex].answers[i];
+// document.getElementById("objective").appendChild(addButton);
+// addButton.setAttribute("class", "btn btn-info");
+// addButton.setAttribute("style","margin: 5px");
+// addButton.addEventListener("click", checkAnswer);
 
 
 
