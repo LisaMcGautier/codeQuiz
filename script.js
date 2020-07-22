@@ -1,8 +1,7 @@
-// scores internal link (anchor)
+// SCORES INTERNAL LINK (LOCAL STORAGE)
 var scores = document.getElementById("scores");
 
-// timer at 0 when page loads && starts onclick start button
-// function in previous activity
+// TIMER AT 0 WHEN PAGE LOADS && STARTS ON CLICK START BUTTON
 
 var timer = document.getElementById("timer");
 
@@ -13,9 +12,9 @@ startBtn.addEventListener("click", startQuiz);
 var countdown;
 countdown = 60;
 
-// title h1 && array [] of questions getElementById.innerHTML "question"
-// objective p && possible answers
-// array [] of objects {3 incorrect answers && 1 correct answer}
+// TITLE h1 && ARRAY [] OF QUESTIONS getElementById.innerHTML "question"
+// getElementById.innerHTML "objective" p && POSSIBLE ANSWERS
+// ARRAY [] of OBJECTS {3 incorrect answers && 1 correct answer}
 
 var title = document.getElementById("title");
 var objective = document.getElementById("objective");
@@ -115,7 +114,7 @@ function showQuestions() {
         // addButton.innerText = answerButtons[i];
         addButton.innerText = questions[currentIndex].answers[i];
         document.getElementById("objective").appendChild(addButton);
-        addButton.setAttribute("class", "btn btn-info btn-sm");
+        addButton.setAttribute("class", "btn btn-info");
         addButton.setAttribute("style","margin: 5px");
         addButton.addEventListener("click", checkAnswer);
     }
@@ -133,7 +132,7 @@ function checkAnswer(event) {
         var buttonContent = event.target.innerText;
         // console.log(buttonContent);
 
-        // incorrect answers decrement timer
+        // INCORRECT ANSWERS DECREMENT TIMER
 
         if (buttonContent != questions[currentIndex].correctAnswer) {
             countdown -= 7;
@@ -144,7 +143,7 @@ function checkAnswer(event) {
 
     // });
 
-    // all answers activate next question
+    // ALL ANSWERS ACTIVETE NEXT QUESTION
     currentIndex++;
 
     console.log(currentIndex);
@@ -156,12 +155,44 @@ function checkAnswer(event) {
         title.setAttribute("style", "color: green");
         title.innerHTML = "You Did It!👏";
         objective.innerHTML = "";
+        objective.innerHTML = "Your score is : " + " " + countdown;
+
+        // highscore();
 
     }
 
     showQuestions();
 
 }
+
+// SCORES INTERNAL LINK (LOCAL STORAGE)
+// var scores = document.getElementById("scores");
+
+// function
+
+function highscore(){
+
+    title.innerHTML = "High Score!";
+
+    objective.innerHTML = "Enter Initials:"
+    var initials = objective.createElement("input");
+    objective.appendChild(initials);
+    initials.addEventListener("keypress", function() {
+        console.log("input")
+    });
+
+
+    var submitButton = objective.createElement("button");  
+    addButton.innerText = ("Submit");          
+    document.getElementById("objective").appendChild(addButton);
+    submitButton.setAttribute("class", "btn btn-primary");
+    submitButton.setAttribute("style","margin: 5px");
+    submitButton.addEventListener("click", );
+}
+
+
+
+
 
 // function
 
@@ -180,7 +211,7 @@ function startQuiz() {
         if (countdown <= 0) {
             clearInterval(interval);
             title.setAttribute("style", "color: red");
-            title.innerHTML = "Game Over!";
+            title.innerHTML = "Game Over! 😫";
             objective.innerHTML = "";
 
         }
@@ -191,13 +222,11 @@ function startQuiz() {
 
     showQuestions();
 
-    // start button
-    // disappears onclick
+    // START BUTTON DISAPPEARS ON CLICK
 
     startBtn.style.display = "none";
 
 }
-
 
 
 // SEVERAL ATTEMPTS THAT DID NOT RETURN THE DESIRED RESULT OF THE BUTTON STRING IN THE CONSOLE LOG:

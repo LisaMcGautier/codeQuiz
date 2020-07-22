@@ -87,3 +87,10 @@ Separated `showQuestions` function into two parts; created a new function `check
 Figured out that my syntax for currentIndex was incorrect!!  I was ASSIGNING `currentIndex = currentIndex++` instead of simply INCREMENTING currentIndex++!! 🙂
 
 Added some dynamic styling and checked for responsiveness on smaller screens.
+
+Figured out how to change the background color while keeping the integrity of the Bootstrap styling.
+
+7/22
+
+Started working on the highscore function.  Not there yet.
+Made adjustments to the "You did it!" screen; input field and Submit button not showing up.
