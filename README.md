@@ -31,8 +31,8 @@ GIVEN I am taking a code quiz
 - [x] WHEN **all questions are answered** 
 - [x] or the **timer reaches 0**
 - [x] THEN the **game is over**
-- [] WHEN the game is over
-- [] THEN I can **save my initials and score**
+- [x] WHEN the game is over
+- [x] THEN I can **save my initials and score**
 ```
 
 7/18:
