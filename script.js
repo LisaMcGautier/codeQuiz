@@ -1,5 +1,8 @@
 // SCORES INTERNAL LINK (LOCAL STORAGE)
-var scores = document.getElementById("scores");
+// var scores = document.getElementById("scores");
+// retreiveHighScores()
+// var highScoreObjectJSON=localStorage.getItem(highScore);
+// console.log(highScoreObjectJSON);
 
 // TIMER AT 0 WHEN PAGE LOADS && STARTS ON CLICK START BUTTON
 
@@ -197,15 +200,19 @@ function checkAnswer(event) {
 // SCORES INTERNAL LINK (LOCAL STORAGE)
 // var scores = document.getElementById("scores");
 
+
+
 // function
 
 var initials;
+var currentScore;
 
 function highscore() {
 
     title.innerHTML = "High Score!";
 
     objective.innerHTML = "Your score is : " + " " + countdown;
+    currentScore = countdown;
 
     objective.innerHTML = "Enter Initials : "
     initials = document.createElement("input");
@@ -263,16 +270,54 @@ function startQuiz() {
 }
 
 
+// function
+
+function saveHighScore() {
+    var score = localStorage.getItem("score", countdown);
+    var name = localStorage.getItem("winner", initials);
+    var highScore = {
+        score: "score",
+        name: "winner"
+    }
+    console.log(highScore);
+
+    var highScoreObjectJSON = JSON.stringify(highScore);
+    console.log(highScoreObjectJSON);
+    localStorage.setItem("highscore", highScoreObjectJSON);
+
+}
+
+
+// SCORES INTERNAL LINK?? (LOCAL STORAGE)
+// function
+
+// var scores = document.getElementById("scores");
+
+// function retreiveHighScores() {
+//     var highScoreObjectJSON = localStorage.getItem(highScore);
+//     var highScore = {
+//         score: "score",
+//         name: "winner"
+//     }
+    
+//     console.log(highScoreObjectJSON);
+// }
 
 // TRYING TO SAVE THE SCORE AND THE INITIALS AS AN OBJECT IN LOCAL STORAGE.  NOT SUCCESSFUL. YET.
 
 // LINE 159
-localStorage.getItem("score", countdown);
+// localStorage.getItem("score", countdown);
 // LINE 225
-localStorage.getItem("winner", initials);
+// localStorage.getItem("winner", initials);
 
-console.log(localStorage.getItem("score", countdown));
-console.log(localStorage.getItem("winner", initials));
+// console.log(localStorage.getItem("score", countdown));
+// console.log(localStorage.getItem("winner", initials));
+
+// var highScore = {
+//     score: "score",
+//     name: "winner"
+// }
+
 
 // var highScore={
 //     score: ("score", countdown),
