@@ -104,3 +104,7 @@ Once the player completes the game, they can save their initials and score.
 Tried to concatenate score and winner (variables `countdown` and `initials`
 
 I can log each to the console, but because each is set to local storage within a function, I am having difficulty creating a new object variable to store both values in a single key.
+
+Made a final attempt to create functions for saving high scores and retrieving high scores to/from local storage using JSON.  Not successful.
+
+For the most part, the quiz works the way I expected.
