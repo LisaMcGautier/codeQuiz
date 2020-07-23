@@ -108,3 +108,12 @@ I can log each to the console, but because each is set to local storage within a
 Made a final attempt to create functions for saving high scores and retrieving high scores to/from local storage using JSON.  Not successful.
 
 For the most part, the quiz works the way I expected.
+
+![Screenshot (335)](https://user-images.githubusercontent.com/62854999/88249076-49380400-cc71-11ea-9cca-6deedb0cba18.png)
+![Screenshot (336)](https://user-images.githubusercontent.com/62854999/88249079-4b01c780-cc71-11ea-9981-8dd60676f956.png)
+![Screenshot (337)](https://user-images.githubusercontent.com/62854999/88249082-4c32f480-cc71-11ea-89ec-144a96df096b.png)
+![Screenshot (338)](https://user-images.githubusercontent.com/62854999/88249086-4d642180-cc71-11ea-96d9-c89abf13bf91.png)
+
+
+ https://github.com/LisaMcGautier/codeQuiz
+ https://lisamcgautier.github.io/codeQuiz/
